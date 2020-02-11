@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content%}
+<h2><p> Vote</p></h2>
+<form action="votepoll" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+    <label>Select Your Chairman</label>
+    <select class="form-control" name="chairman">
+        {% for candidate in chair %}
+        <option value="{{candidate.Reg_No}} -- {{candidate.FirstName}} {{candidate.LastName}}">
+            {{candidate.FirstName}} {{candidate.LastName}} -- {{candidate.Reg_No}}</option>
+         {% endfor %}
+    </select>
+    </div>
+    <div class="form-group">
+    <label>Select Your Secretary</label>
+    <select class="form-control" name="secretary">
+        {% for candidate in sec %}
+        <option value="{{candidate.Reg_No}} -- {{candidate.FirstName}} {{candidate.LastName}}">
+            {{candidate.FirstName}} {{candidate.LastName}} -- {{candidate.Reg_No}}</option>
+         {% endfor %}
+    </select>
+    </div>
+    <div class="form-group">
+     <label>Select Your Entertaniment</label>
+    <select class="form-control" name="entertainment">
+        {% for candidate in ent %}
+        <option value="{{candidate.Reg_No}} -- {{candidate.FirstName}} {{candidate.LastName}}">
+            {{candidate.FirstName}} {{candidate.LastName}} -- {{candidate.Reg_No}}</option>
+         {% endfor %}
+    </select>
+    </div>
+    <div class="form-group">
+     <label>Select Your Treasurer</label>
+    <select class="form-control" name="treasurer">
+        {% for candidate in tre %}
+        <option value="{{candidate.Reg_No}} -- {{candidate.FirstName}} {{candidate.LastName}}">
+            {{candidate.FirstName}} {{candidate.LastName}} -- {{candidate.Reg_No}}</option>
+         {% endfor %}
+    </select>
+    </div>
+        <div class="form-group">
+     <label>Select Your Academics</label>
+    <select class="form-control" name="academics">
+        {% for candidate in aca %}
+        <option value="{{candidate.Reg_No}} -- {{candidate.FirstName}} {{candidate.LastName}}">
+            {{candidate.FirstName}} {{candidate.LastName}} -- {{candidate.Reg_No}}</option>
+         {% endfor %}
+    </select>
+        </div>
+   <center> <input class="btn btn-secondary btn-lg" type=" submit" value="vote"> </center>
+</form>
+
+{% endblock content%}

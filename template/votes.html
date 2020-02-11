@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content%}
+<center><h3><p> Voter Choices </p></h3></center>
+
+{% for choice in vote %}
+<div class="card">
+  <div class="card-header">
+    <h4>Voter Username: {{user.username}}</h4>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><p>chairman: {{choice.chairman}}</p></h5><br>
+    <h5 class="card-title"><p>secretary: {{choice.secretary}}</p></h5><br>
+    <h5 class="card-title"><p>Treasurer: {{choice.Treasurer}}</p></h5><br>
+    <h5 class="card-title"><p>Entertainment: {{choice.Entertainment}}</p></h5><br>
+    <h5 class="card-title"><p>Academics: {{choice.Academic}}</p></h5><br>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock content%}
